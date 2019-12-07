@@ -18,12 +18,16 @@ public class Inc1000 extends Thread{
     @Override
     public void run(){
         for (int i = 0; i < 1000; i++) {
-            cont ++;
+            inc1();
             try {
                 Thread.sleep(1);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Inc1000.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+    }
+    
+    public synchronized void inc1(){
+        cont++;
     }
 }
