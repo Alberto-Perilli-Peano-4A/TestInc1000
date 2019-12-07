@@ -13,21 +13,17 @@ import java.util.logging.Logger;
  * @author perilli.alberto
  */
 public class Inc1000 extends Thread{
-    private static int cont = 0;
+    public static int cont;
     
     @Override
-    public void run() {
+    public void run(){
         for (int i = 0; i < 1000; i++) {
-            cont++;
+            cont ++;
             try {
                 Thread.sleep(1);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Inc1000.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-    }
-    
-    public static int getCont() {
-        return cont;
     }
 }
